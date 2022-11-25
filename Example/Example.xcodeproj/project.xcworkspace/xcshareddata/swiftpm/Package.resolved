@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "multilinetextview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stateman92/MultilineTextView",
+      "state" : {
+        "revision" : "acdfda9f1bc126c50fd730d00993d5cfabeeecb6",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
