@@ -1,2 +1,2 @@
 # MultilineTextView
-UITextView has just enters the SwiftUI world! 👀
+UITextView has just entered the SwiftUI world! 👀
