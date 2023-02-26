@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stateman92/MultilineTextView",
       "state" : {
-        "revision" : "67338b49879b8b974b6ebdcf9c00acaa738d7a82",
-        "version" : "0.0.2"
+        "revision" : "bbcbe385649789de04145c4dbc6ab52113015097",
+        "version" : "0.0.3"
       }
     }
   ],

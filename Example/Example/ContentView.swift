@@ -169,25 +169,29 @@ extension ContentView {
 extension ContentView {
     private var oneLineTextView: some View {
         MultilineTextView(
-            text: "One line of text"
+            text: "One line of text",
+            textViewProperties: nil
         )
     }
 
     private var multipleLinesTextView: some View {
         MultilineTextView(
-            text: "Multiple lines of text, which should be broken into multiple lines at the end of the screen. I just add some more words to make sure that even on larger devices that can be tested too"
+            text: "Multiple lines of text, which should be broken into multiple lines at the end of the screen. I just add some more words to make sure that even on larger devices that can be tested too",
+            textViewProperties: nil
         )
     }
 
     private var oneLineTextViewWithLink: some View {
         MultilineTextView(
-            text: "One line of link https://www.google.com and so on"
+            text: "One line of link https://www.google.com and so on",
+            textViewProperties: nil
         )
     }
 
     private var multipleLinesTextViewWithLink: some View {
         MultilineTextView(
-            text: "Multiple lines of text with some links, e.g. https://www.google.com, which should be broken into multiple lines at the end of the screen. I just add some more words to make sure that even on larger devices that can be tested too. And here is another link https://www.facebook.com too"
+            text: "Multiple lines of text with some links, e.g. https://www.google.com, which should be broken into multiple lines at the end of the screen. I just add some more words to make sure that even on larger devices that can be tested too. And here is another link https://www.facebook.com too",
+            textViewProperties: nil
         )
     }
 
