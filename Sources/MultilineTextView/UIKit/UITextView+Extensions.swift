@@ -10,6 +10,9 @@ import UIKit
 extension UITextView {
     func setup(with textViewProperties: TextViewProperties?) {
         guard let textViewProperties else { return }
+        if let textAlignment = textViewProperties.textAlignment {
+            self.textAlignment = textAlignment
+        }
         if let textColor = textViewProperties.textColor {
             self.textColor = textColor
         }
