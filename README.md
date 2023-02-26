@@ -3,7 +3,7 @@ UITextView has just entered the SwiftUI world! 👀
 
 ### How to use
 
-You can use MultilineTextView just like any other SwiftUI View:
+You can use `MultilineTextView` just like any other SwiftUI View:
 
 ```swift
 MultilineTextView(
