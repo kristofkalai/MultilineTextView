@@ -199,7 +199,8 @@ extension ContentView {
                 linkColor: .blue,
                 textFont: .systemFont(ofSize: 12),
                 linkFont: .systemFont(ofSize: 11),
-                accessibilityIdentifier: "accessibilityIdentifier"
+                accessibilityIdentifier: "accessibilityIdentifier",
+                textAlignment: .justified
             )
         )
     }
@@ -212,7 +213,8 @@ extension ContentView {
                 linkColor: .orange,
                 textFont: .boldSystemFont(ofSize: 12),
                 linkFont: .italicSystemFont(ofSize: 12),
-                accessibilityIdentifier: "accessibilityIdentifier"
+                accessibilityIdentifier: "accessibilityIdentifier",
+                textAlignment: .justified
             )
         )
     }
