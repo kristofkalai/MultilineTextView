@@ -11,8 +11,8 @@ struct WrappedTextView {
     @Binding var text: String
     @Binding var calculatedHeight: CGFloat?
     @Binding var calculatedWidth: CGFloat?
+    @Binding var textViewProperties: TextViewProperties?
     let maxWidth: CGFloat
-    let textViewProperties: TextViewProperties?
 }
 
 extension WrappedTextView: UIViewRepresentable {
@@ -39,6 +39,7 @@ extension WrappedTextView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UITextView, context: Context) {
         uiView.text = text
+        uiView.setup(with: textViewProperties)
 
         let newSize = uiView.sizeThatFits(CGSize(width: maxWidth, height: .greatestFiniteMagnitude))
         if calculatedHeight != newSize.height {

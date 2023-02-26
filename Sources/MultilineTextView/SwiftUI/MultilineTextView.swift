@@ -11,15 +11,23 @@ public struct MultilineTextView {
     @State private var dynamicHeight: CGFloat?
     @State private var dynamicWidth: CGFloat?
     @Binding private var text: String
-    private let textViewProperties: TextViewProperties?
+    @Binding private var textViewProperties: TextViewProperties?
+
+    public init(text: Binding<String>, textViewProperties: Binding<TextViewProperties?> = .constant(nil)) {
+        self._text = text
+        self._textViewProperties = textViewProperties
+    }
+
+    public init(text: String, textViewProperties: Binding<TextViewProperties?> = .constant(nil)) {
+        self.init(text: .constant(text), textViewProperties: textViewProperties)
+    }
 
     public init(text: Binding<String>, textViewProperties: TextViewProperties? = nil) {
-        self._text = text
-        self.textViewProperties = textViewProperties
+        self.init(text: text, textViewProperties: .constant(textViewProperties))
     }
 
     public init(text: String, textViewProperties: TextViewProperties? = nil) {
-        self.init(text: .constant(text), textViewProperties: textViewProperties)
+        self.init(text: .constant(text), textViewProperties: .constant(textViewProperties))
     }
 }
 
@@ -29,8 +37,8 @@ extension MultilineTextView: View {
             WrappedTextView(text: $text,
                             calculatedHeight: $dynamicHeight,
                             calculatedWidth: $dynamicWidth,
-                            maxWidth: $0.size.width,
-                            textViewProperties: textViewProperties)
+                            textViewProperties: $textViewProperties,
+                            maxWidth: $0.size.width)
             .frame(minWidth: dynamicWidth,
                    idealWidth: dynamicWidth,
                    maxWidth: dynamicWidth,
