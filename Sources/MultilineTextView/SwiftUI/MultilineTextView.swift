@@ -1,6 +1,6 @@
 //
 //  MultilineTextView.swift
-//  
+//
 //
 //  Created by Kristof Kalai on 2022. 11. 25..
 //
@@ -17,7 +17,9 @@ public struct MultilineTextView {
         self._text = text
         self._textViewProperties = textViewProperties
     }
+}
 
+extension MultilineTextView {
     public init(text: String, textViewProperties: Binding<TextViewProperties?> = .constant(nil)) {
         self.init(text: .constant(text), textViewProperties: textViewProperties)
     }

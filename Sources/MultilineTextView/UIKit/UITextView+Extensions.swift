@@ -1,6 +1,6 @@
 //
 //  UITextView+Extensions.swift
-//  
+//
 //
 //  Created by Kristof Kalai on 2022. 11. 25..
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 extension UITextView {
-    func setup(with textViewProperties: TextViewProperties?) {
+    public func setup(with textViewProperties: TextViewProperties?) {
         guard let textViewProperties else { return }
         if let textAlignment = textViewProperties.textAlignment {
             self.textAlignment = textAlignment
