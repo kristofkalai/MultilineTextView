@@ -6,7 +6,7 @@ UITextView has just entered the SwiftUI world! 👀
 Add the following to `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/stateman92/MultilineTextView", exact: .init(0, 0, 3))
+.package(url: "https://github.com/stateman92/MultilineTextView", exact: .init(0, 0, 6))
 ```
 
 [Or add the package in Xcode.](https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app)

@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct WrappedTextView {
+    final class Coordinator: NSObject {
+        private let parent: WrappedTextView
+
+        init(_ parent: WrappedTextView) {
+            self.parent = parent
+        }
+    }
+
     @Binding var text: String
     @Binding var calculatedHeight: CGFloat?
     @Binding var calculatedWidth: CGFloat?
@@ -33,6 +41,7 @@ extension WrappedTextView: UIViewRepresentable {
         view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         view.setContentCompressionResistancePriority(.required, for: .vertical)
+        view.delegate = context.coordinator
         view.setup(with: textViewProperties)
         return view
     }
@@ -48,5 +57,25 @@ extension WrappedTextView: UIViewRepresentable {
                 calculatedWidth = newSize.width
             }
         }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        .init(self)
+    }
+}
+
+extension WrappedTextView.Coordinator: UITextViewDelegate {
+    func textView(
+        _ textView: UITextView,
+        shouldInteractWith URL: URL,
+        in characterRange: NSRange,
+        interaction: UITextItemInteraction
+    ) -> Bool {
+        guard let index = Int(URL.absoluteString),
+              let properties = parent.textViewProperties,
+              let link = properties.links[safe: index] else { return false }
+
+        link.action()
+        return false
     }
 }
