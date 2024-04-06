@@ -34,5 +34,11 @@ extension UITextView {
         if let accessibilityIdentifier = textViewProperties.accessibilityIdentifier {
             self.accessibilityIdentifier = accessibilityIdentifier
         }
+
+        let attributedString = NSMutableAttributedString(string: text, attributes: .init())
+        textViewProperties.links.enumerated().forEach {
+            attributedString.setLink(text: $0.element.text, url: $0.offset.description)
+        }
+        attributedText = attributedString
     }
 }
