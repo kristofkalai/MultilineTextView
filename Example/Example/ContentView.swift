@@ -204,7 +204,12 @@ extension ContentView {
                 textFont: .systemFont(ofSize: 12),
                 linkFont: .systemFont(ofSize: 11),
                 accessibilityIdentifier: "accessibilityIdentifier",
-                textAlignment: .justified
+                textAlignment: .justified,
+                links: [
+                    .init(text: "https://www.google.com") {
+                        print("https://www.google.com tapped")
+                    }
+                ]
             )
         )
     }
@@ -218,7 +223,15 @@ extension ContentView {
                 textFont: .boldSystemFont(ofSize: 12),
                 linkFont: .italicSystemFont(ofSize: 12),
                 accessibilityIdentifier: "accessibilityIdentifier",
-                textAlignment: .justified
+                textAlignment: .justified,
+                links: [
+                    .init(text: "https://www.google.com") {
+                        print("https://www.google.com tapped")
+                    },
+                    .init(text: "https://www.facebook.com") {
+                        print("https://www.facebook.com tapped")
+                    }
+                ]
             )
         )
     }
